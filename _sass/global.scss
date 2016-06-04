@@ -1,0 +1,16 @@
+body {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.index-page {
+	font: 300 21px $font-family-sans-serif;
+
+	a:link {
+		text-shadow: none;
+	}
+}
+
+#content {
+	padding: 0px;
+}

@@ -1,0 +1,11 @@
+# Site info
+domain: localhost:4000
+title: WebGL Mistakes
+author: Chris Cooper
+email: chris@quixotic-chris.com
+
+exclude: ['README.md', 'LICENSE', '.gitignore']
+
+sass:
+    sass_dir: _sass
+

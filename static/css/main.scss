@@ -1,0 +1,35 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+
+$background-color: #EEEEEE;
+
+$faded-text: #A0A0A0;
+
+
+// Bootstrap overrides
+$brand-primary: darken($background-color, 30%);
+$brand-secondary: darken(#E95D19, 15%);
+
+$font-family-sans-serif:  "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-monospace: Consolas,"Liberation Mono", Menlo, Monaco, Consolas, monospace !default;
+
+$navbar-default-brand-color: #282828;
+$navbar-default-brand-hover-color: lighten($navbar-default-brand-color, 12%);
+$navbar-default-bg: transparent;
+$navbar-default-link-color: #555;
+
+
+// import bootstrap
+@import "bootstrap";
+
+/*
+ * ---- Main Sass ----
+ */
+ @import "global";
+
+/*
+ * Extra individual Sass
+ */
+@import "demos";
