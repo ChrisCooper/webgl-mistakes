@@ -12,9 +12,18 @@ title: Prefab light and sphere
     #ifdef GL_ES
     precision highp float;
     #endif
+
+    // create a shared variable for the
+    // VertShader and FragShader containing the normal
+    varying vec3 vNormal;
     
     void main()
     {
+        // set the vNormal value with
+        // the attribute value passed
+        // in by Three.js
+        vNormal = normal;
+
         gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
     }
     
@@ -25,10 +34,14 @@ title: Prefab light and sphere
     #ifdef GL_ES
     precision highp float;
     #endif
+
+    // same name and type as VS
+    varying vec3 vNormal;
     
     void main()
     {
-        gl_FragColor = vec4(1.0,0.0,1.0,1.0);
+        gl_FragColor = vec4(vNormal, 1.0);
+        //gl_FragColor = vec4(1.0,0.0,1.0,1.0);
     }
 
 </script>
@@ -93,9 +106,16 @@ console.log(sphere);
 // add the sphere to the scene
 scene.add(sphere);
 
+var counter = 0;
+
 function render() {
     // draw!
     renderer.render(scene, camera);
+
+    camera.position.x = Math.sin(counter) * 160;
+
+    counter += 0.04;
+
     requestAnimationFrame(render);
 }
 
